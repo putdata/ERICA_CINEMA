@@ -1,0 +1,22 @@
+$color-grey: rgb(32,32,32);
+
+$color-danger: rgb(216, 33, 33);
+$color-warning: rgb(240, 154, 32);
+$color-primary: rgb(0, 110, 196);
+$color-success: rgb(30, 150, 5);
+$color-violet: rgb(173, 105, 255);
+
+.flex-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}

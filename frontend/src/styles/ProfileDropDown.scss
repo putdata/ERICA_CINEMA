@@ -1,0 +1,57 @@
+#profile {
+
+  #outside {
+    cursor: pointer;
+    #icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    #name {
+      margin-left: 8px;
+    }
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 50px;
+    right: 24px;
+    background: black;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0;
+
+    #wrap {
+      width: 150px;
+      padding: 8px 0;
+      background: rgba(64,64,64,0.7);
+
+      #segment-line {
+        border-top: 1px solid rgb(64, 64, 64);
+        margin: 8px 0;
+      }
+
+      #mypage-btn {
+        cursor: pointer;
+        padding: 8px 16px;
+        &:hover {
+          background-color: rgba(white, 0.3);
+        }
+      }
+
+      #signout-btn {
+        cursor: pointer;
+        align-items: center;
+        padding: 8px 16px;
+
+        img {
+          width: 16px;
+          height: 16px;
+          margin-right: 8px;
+        }
+        &:hover {
+          background-color: rgba(white, 0.3);
+        }
+      }
+    }
+  }
+}

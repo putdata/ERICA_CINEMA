@@ -1,0 +1,8 @@
+export const authActionType = {
+  SIGNIN: 'AUTH_SIGNIN',
+  SIGNIN_SUCCESS: 'AUTH_SIGNIN_SUCCESS',
+
+  SIGNOUT: 'AUTH_SIGNOUT',
+
+  SIGNUP: 'AUTH_SIGNUP',
+}

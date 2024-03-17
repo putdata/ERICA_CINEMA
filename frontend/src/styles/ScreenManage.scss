@@ -1,0 +1,65 @@
+@import 'Global.scss';
+
+#screen-manage {
+  width: 100%;
+
+  #setting {
+    input {
+      width: 400px;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+  }
+
+  #screen {
+    margin-top: 16px;
+    background: white;
+    text-align: center;
+    color: black;
+  }
+
+  #seats {
+    width: 100%;
+    overflow: auto;
+    margin-top: 16px;
+    padding-bottom: 32px;
+
+    #row {
+      margin-bottom: 8px;
+
+      #seat {
+        min-width: 60px;
+        min-height: 40px;
+        margin-right: 8px;
+        background: rgba(white, 1);
+        color: black;
+        text-align: center;
+
+        div {
+          cursor: pointer;
+          min-width: 60px;
+          padding: 2px 0;
+
+          &:first-child {
+            cursor: default;
+          }
+        }
+
+        &.disabled {
+          background: rgba(white, 0.3);
+        }
+        &.normal {
+          background: $color-primary;
+        }
+        &.couple {
+          background: $color-danger;
+        }
+      }
+    }
+  }
+
+  #total-seats {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+}

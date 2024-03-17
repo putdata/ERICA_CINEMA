@@ -1,0 +1,130 @@
+#signin {
+  #btn {
+    cursor: pointer;
+    user-select: none;
+    width: 90px;
+    height: 36px;
+    border: 1px solid rgb(0, 110, 196);
+    border-radius: 2px;
+    text-align: center;
+    line-height: 36px;
+    
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: rgb(64, 64, 64);
+    }
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 50px;
+    right: 24px;
+    background: black;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0;
+
+    #form {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      padding: 16px 8px;
+      background: rgba(64,64,64,0.7);
+
+      #field {
+        position: relative;
+        display: flex;
+        margin-bottom: 4px;
+        padding: 8px 4px;
+        border-radius: 2px;
+        background-color: rgb(64, 64, 64);
+    
+        input {
+          background: inherit;
+          font-size: 14px;
+          color: white;
+          flex: 1;
+          outline: none;
+          border: 0;
+          appearance: none;
+        }
+
+        #warn {
+          position: absolute;
+          top: 42px;
+          padding: 2px 8px;
+          color: #86181d;
+          background-color: #ffdce0;
+          border: 1px solid #bd6d76;
+          border-radius: 4px;
+          z-index: 9;
+
+          #message {
+            font-size: 12px;
+          }
+
+          &::before {
+            bottom: 100%;
+            left: 8px;
+            width: 0;
+            height: 0;
+            content: ' ';
+            position: absolute;
+            border: solid transparent;
+            border-width: 7px;
+            border-bottom-color: #bd6d76;
+          }
+
+          &::after {
+            bottom: 100%;
+            left: 10px;
+            width: 0;
+            height: 0;
+            content: ' ';
+            position: absolute;
+            border: solid transparent;
+            border-width: 5px;
+            border-bottom-color: #ffdce0;
+          }
+        }
+      }
+
+      #submit {
+        cursor: pointer;
+        border: 0;
+        width: 100%;
+        background: rgb(0, 110, 196);
+        color: white;
+        border-radius: 2px;
+        margin-top: 4px;
+        padding: 8px;
+        font-size: 14px;
+        outline: none;
+        appearance: none;
+    
+        transition: all 0.2s ease;
+    
+        &:hover {
+          background-color: white;
+          color: rgb(0, 110, 196);
+        }
+      }
+
+      #footer {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 8px;
+        font-size: 14px;
+    
+        #signup {
+          cursor: pointer;
+          color: white;
+    
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,680 @@
+@import 'Global.scss';
+
+#ticket-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 24px;
+
+  #ticket-option {
+    flex: 1;
+    width: 100%;
+    overflow: auto;
+
+    #movie-list {
+      min-width: 200px;
+      height: 100%;
+      border-right: 2px solid rgba(white, 0.5);
+      border-left: 4px solid rgba(white, 0.5);
+      padding: 0 4px;
+      margin-right: 4px;
+
+      #header {
+        width: 100%;
+
+        #label {
+          width: 100%;
+          padding: 4px 0;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          font-weight: 500;
+          background-color: rgba(white, 0.1);
+        }
+      }
+
+      #movie {
+        flex: 1;
+        overflow: auto;
+        
+        #item {
+          cursor: pointer;
+          padding: 8px 4px;
+          margin-top: 4px;
+          &:hover, &[active="true"]  {
+            background-color: rgba(white, 0.3);
+          }
+
+          #watch-grade {
+            width: 30px;
+            height: 30px;
+            margin-right: 4px;
+
+            &:before {
+              display: block;
+              width: 30px;
+              height: 30px;
+              text-align: center;
+              line-height: 30px;
+              font-size: 14px;
+              font-weight: bold;
+              border-radius: 100%;
+            }
+
+            &.adult:before {
+              background-color: $color-danger;
+              content: '청불';
+            }
+            &.fifteen:before {
+              background-color: $color-warning;
+              content: '15';
+            }
+            &.twelve::before{
+              background-color: $color-primary;
+              content: '12';
+            }
+            &.all::before {
+              background-color: $color-success;
+              content: '전체';
+            }
+          }
+
+          #title {
+            width: 162px;
+            height: 30px;
+            font-size: 0.8em;
+            line-height: 30px;
+            font-weight: 500;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+
+    #location-list {
+      min-width: 150px;
+      height: 100%;
+      border-right: 2px solid rgba(white, 0.5);
+      padding-right: 4px;
+      margin-right: 4px;
+
+      #header {
+        width: 100%;
+
+        #label {
+          width: 100%;
+          padding: 4px 0;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          font-weight: 500;
+          background-color: rgba(white, 0.1);
+        }
+      }
+
+      #location {
+        flex: 1;
+        overflow: auto;
+
+        #item {
+          cursor: pointer;
+          padding: 8px 4px;
+          margin-top: 4px;
+          min-height: 30px;
+          line-height: 30px;
+          text-align: center;
+          font-size: 0.8em;
+          font-weight: 500;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          &:hover, &[active="true"] {
+            background-color: rgba(white, 0.3);
+          }
+        }
+
+        #empty {
+          margin-top: 8px;
+          align-self: center;
+          justify-self: center;
+          font-size: 0.8em;
+          text-align: center;
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+    }
+
+    #theater-list {
+      min-width: 150px;
+      height: 100%;
+      border-right: 2px solid rgba(white, 0.5);
+      padding-right: 4px;
+      margin-right: 4px;
+
+      #header {
+        width: 100%;
+
+        #label {
+          width: 100%;
+          padding: 4px 0;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          font-weight: 500;
+          background-color: rgba(white, 0.1);
+        }
+      }
+
+      #theater {
+        flex: 1;
+        overflow: auto;
+
+        #item {
+          cursor: pointer;
+          padding: 8px 4px;
+          margin-top: 4px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          font-size: 0.8em;
+          font-weight: 500;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          &:hover, &[active="true"] {
+            background-color: rgba(white, 0.3);
+          }
+        }
+      }
+    }
+
+    #select-time {
+      position: relative;
+      flex: 1;
+      min-width: 300px;
+      padding-right: 4px;
+      border-right: 4px solid (rgba(white, 0.5));
+
+      #wrap {
+        position: absolute;
+        width: calc(100% - 4px);
+        height: 100%;
+
+        #date-list {
+          padding-bottom: 4px;
+          border-bottom: 2px solid rgba(white, 0.5);
+          #header {
+            width: 100%;
+    
+            #label {
+              width: 100%;
+              padding: 4px 0;
+              height: 40px;
+              line-height: 40px;
+              text-align: center;
+              font-weight: 500;
+              background-color: rgba(white, 0.1);
+            }
+          }
+    
+          #date {
+            flex: 1;
+            overflow-x: auto;
+            margin-top: 4px;
+    
+            #item {
+              cursor: pointer;
+              padding: 8px 4px;
+              min-width: 100px;
+              margin-left: 4px;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              font-size: 0.8em;
+              font-weight: 500;
+              &:first-child { margin: 0; }
+              &:hover, &[active="true"] {
+                background-color: rgba(white, 0.3);
+              }
+            }
+          }
+        }
+
+        #screen-list {
+          margin-top: 4px;
+          flex: 1;
+          overflow: auto;
+          #screen {
+            &:first-child { margin-top: 0; }
+            #name {
+              padding: 4px 0;
+              text-align: center;
+              background-color: rgb(235, 85, 125);
+              font-size: 0.8em;
+              font-weight: 500;
+            }
+
+            #time-list {
+              margin: 8px;
+
+              #time {
+                cursor: pointer;
+                padding: 4px;
+                display: inline-block;
+                font-size: 0.8em;
+                margin-right: 16px;
+                &:last-child { margin: 0; }
+                &:hover, &[active="true"] {
+                  border-radius: 4px;
+                  background-color: rgba(white, 0.3);
+                }
+
+                #start {
+                  margin-right: 4px;
+                  font-weight: 500;
+                }
+
+                #remain {
+                  color: $color-success;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #buttons {
+    margin-top: 24px;
+    width: 100%;
+    height: 80px;
+    justify-content: flex-end;
+    padding-top: 24px;
+    border-top: 4px solid $color-warning;
+
+    #reset-btn {
+      cursor: pointer;
+      width: 100px;
+      height: 78px;
+      line-height: 78px;
+      text-align: center;
+      border: 1px solid white;
+      margin-right: 24px;
+    }
+
+    #next-btn, #disable-btn {
+      cursor: pointer;
+      width: 250px;
+      height: 100%;
+      line-height: 80px;
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: 500;
+      background-color: $color-violet;
+    }
+
+    #disable-btn {
+      cursor: default;
+      background-color: rgba(64, 64, 64, 0.8);
+    }
+  }
+}
+
+#seat-select-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 24px;
+
+  .normal {
+    background-color: $color-primary;
+  }
+  .couple {
+    background-color: $color-danger;
+  }
+
+  #summary {
+    height: 120px;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 4px solid rgba(64, 64, 64, 0.8);
+    #selected-info {
+      flex: 1;
+
+      #movie {
+        font-size: 1.5em;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      #theater {
+        margin-top: 12px;
+      }
+
+      #screen {
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 0.8em;
+      }
+
+      #time {
+        display: inline-block;
+        font-size: 0.8em;
+      }
+    }
+
+    #selected-seat {
+      height: 100%;
+      width: 260px;
+      text-align: center;
+      overflow: auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(64, 64, 64, 0.8);
+
+      #info {
+        font-size: 0.8em;
+        padding: 8px 8px 0 8px;
+        &:last-child { padding-bottom: 8px; }
+
+        #seat {
+          width: 160px;
+          height: 30px;
+          border: 2px solid black;
+          margin-right: 8px;
+
+          &:before, &:after {
+            width: 5%;
+            height: 100%;
+            content: ' ';
+            background: repeating-linear-gradient(45deg, black, black 3px, transparent 3px, transparent 6px);
+          }
+
+          #position {
+            border-right: 1px dashed black;
+            text-align: center;
+            width: 30%;
+          }
+
+          #type {
+            text-align: center;
+            width: 60%;
+          }
+        }
+
+        #price {
+          font-size: 0.8em;
+          width: 70px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #screen-seat {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    border: 1px solid white;
+    margin-top: 24px;
+    overflow: auto;
+    background-color: rgba(white, 0.1);
+
+    #wrap {
+      position: absolute;
+      min-width: 100%;
+      padding: 0 8px 8px 8px;
+      top: 0;
+
+      #screen {
+        display: block;
+        text-align: center;
+        width: 80%;
+        height: 30px;
+        font-weight: 600;
+        background-color: white;
+        border-radius: 0 0 32px 32px;
+        padding: 4px 0;
+        color: rgb(32, 32, 32);
+        margin-bottom: 8px;
+      }
+
+      #seats {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        gap: 4px;
+
+        #seat {
+          position: relative;
+          cursor: pointer;
+          width: 60px;
+          height: 60px;
+          text-align: center;
+          line-height: 60px;
+
+          &.disabled {
+            background-color: rgba(white, 0.2);
+          }
+          &.selected {
+            &::after {
+              position: absolute;
+              top: 6px;
+              left: 6px;
+              width: 40px;
+              min-height: 40px;
+              content: ' ';
+              border: 4px solid white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #result {
+    width: 100%;
+    height: 80px;
+    border-top: 4px solid $color-warning;
+    padding-top: 24px;
+    margin-top: 24px;
+
+    #total-price {
+      flex: 1;
+      line-height: 80px;
+      font-size: 1.8em;
+
+      #won {
+        color: rgb(255, 238, 51);
+      }
+    }
+
+    #buttons {
+      height: 80px;
+      justify-content: flex-end;
+  
+      #reset-btn {
+        cursor: pointer;
+        width: 100px;
+        height: 78px;
+        line-height: 78px;
+        text-align: center;
+        border: 1px solid white;
+        margin-right: 24px;
+      }
+  
+      #pay-btn, #disable-btn {
+        cursor: pointer;
+        width: 250px;
+        height: 100%;
+        line-height: 80px;
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: 500;
+        background-color: $color-violet;
+      }
+  
+      #disable-btn {
+        cursor: default;
+        background-color: rgba(64, 64, 64, 0.8);
+      }
+    }
+  }
+}
+
+#pay-modal {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 0.8);
+  color: black;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 24px;
+
+  #wrap {
+    align-items: center;
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    border-radius: 2px;
+
+    #header {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      color: white;
+      font-weight: 600;
+      background-color: $color-violet;
+    }
+
+    #fields {
+      flex: 1;
+      width: calc(100% - 32px);
+      padding: 16px;
+
+      #label {
+        margin-top: 16px;
+        font-size: 0.8em;
+        &:first-child { margin: 0; }
+      }
+
+      input {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        border: 1px solid rgba(64, 64, 64, 0.8);
+        outline: none;
+        height: 40px;
+        padding: 0 8px;
+        margin-top: 4px;
+        font-size: 1em;
+      }
+
+      #input-name {
+        width: 100px;
+      }
+
+      #rrn {
+        align-items: center;
+
+        #input-front {
+          width: 90px;
+        }
+        #segment {
+          height: 30px;
+          line-height: 30px;
+          margin: 0 8px;
+        }
+        #input-back {
+          width: 20px;
+          text-align: center;
+        }
+        #secret {
+          height: 30px;
+          line-height: 45px;
+          margin-left: 4px;
+        }
+      }
+
+      #input-phone {
+        width: 180px;
+      }
+    }
+
+    #price {
+      width: 90%;
+      height: 60px;
+      line-height: 60px;
+      font-size: 1.6em;
+      border-top: 4px solid $color-violet;
+      border-bottom: 4px solid $color-violet;
+      text-align: center;
+    }
+
+    #buttons {
+      height: 100px;
+      align-items: center;
+
+      #cancel-btn, #pay-btn {
+        cursor: pointer;
+        width: 130px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+      }
+
+      #cancel-btn {
+        background-color: rgba(64, 64, 64, 0.8);
+        color: white;
+        font-weight: 600;
+        margin-right: 8px;
+      }
+      #pay-btn {
+        background-color: $color-success;
+        color: white;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+#success-page {
+  width: 100%;
+  height: 100%;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 24px;
+
+  #success-text {
+    font-size: 3em;
+    font-weight: 700;
+  }
+  #ticket-number-label {
+    margin: 8px 0;
+  }
+  #ticket-number {
+    background-color: $color-danger;
+    padding: 8px;
+    font-size: 1.6em;
+    font-weight: 600;
+  }
+  #total-price-text {
+    margin: 8px 0;
+  }
+  #total-price {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: $color-success;
+  }
+}

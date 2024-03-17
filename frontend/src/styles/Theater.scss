@@ -1,0 +1,332 @@
+@import 'Global.scss';
+
+#theater-page {
+  padding-bottom: 24px;
+  width: 100%;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 24px;
+  
+  #theater-list {
+    position: relative;
+    color: $color-grey;
+    width: 100%;
+
+    #location {
+
+      #label {
+        cursor: pointer;
+        height: 60px;
+        padding: 0 8px;
+        background: rgba(64, 64, 64, 0.4);
+        text-align: center;
+        line-height: 60px;
+        margin-right: 8px;
+        color: white;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      #list {
+        position: absolute;
+        display: none;
+        padding: 8px 0;
+        grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+        justify-items: center;
+        left: 0;
+        width: 100%;
+        background: #FFF;
+
+        #item {
+          cursor: pointer;
+          min-width: 100px;
+          height: 60px;
+          text-align: center;
+          line-height: 60px;
+          font-size: 20px;
+          font-weight: 500;
+          padding-top: 4px;
+
+          &:hover {
+            height: 58px;
+            border-bottom: 2px solid $color-violet;
+          }
+        }
+      }
+
+      &:hover {
+        #label {
+          color: $color-grey;
+          background-color: white;
+        }
+
+        #list {
+          display: grid;
+        }
+      }
+    }
+  }
+
+  #theater-info {
+    margin-top: 24px;
+
+    #name {
+      font-weight: 600;
+    }
+
+    #address {
+      border-left: 4px solid rgba(64, 64, 64, 0.8);
+      padding: 4px 0 4px 8px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    #phone {
+      border-left: 4px solid rgba(64, 64, 64, 0.8);
+      padding: 4px 0 4px 8px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 18px;
+    }
+  }
+
+  #guide-map {
+    width: 100%;
+    margin: 24px 0;
+    padding-top: 24px;
+    border-top: 4px solid rgba(64, 64, 64, 0.8);
+
+    #content {
+      display: none;
+      margin-top: 12px;
+      width: 100%;
+
+      &.active {
+        display: block;
+      }
+
+      #floors {
+        align-items: center;
+        margin-bottom: 12px;
+
+        #floor {
+          cursor: pointer;
+          height: 40px;
+          min-width: 60px;
+          padding: 0 10px;
+          margin-right: 8px;
+          text-align: center;
+          line-height: 40px;
+          border: 1px solid rgba(64, 64, 64, 0.8);
+          background-color: rgba(64, 64, 64, 0.2);
+
+          &:hover {
+            background-color: rgba(64, 64, 64, 0.3);
+          }
+        }
+      }
+
+      #img {
+        display: none;
+        align-content: center;
+        width: 100%;
+        height: 600px;
+
+        &[active="true"] {
+          display: block;
+        }
+      }
+    }
+
+    #view {
+      cursor: pointer;
+      width: 100%;
+      margin-top: 12px;
+      padding: 12px 0 8px 0;
+      font-size: 14px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom: 4px solid rgba(64, 64, 64, 0.8);
+
+      &:hover {
+        background: rgba(64, 64, 64, 0.5);
+        color: white;
+      }
+    }
+  }
+
+  #movies {
+
+    #title {
+      font-weight: 600;
+    }
+
+    #no-date {
+      align-self: center;
+      justify-self: center;
+      margin-top: 24px;
+
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    #day-list {
+      width: 100%;
+      margin-top: 24px;
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      overflow-x: auto;
+
+      #day-wrap {
+        min-height: 0;
+        
+        #day {
+          cursor: pointer;
+          display: inline-block;
+          width: 120px;
+          height: 60px;
+          margin-right: 8px;
+          text-align: center;
+          line-height: 60px;
+          font-size: 20px;
+          border: 1px solid rgba(64, 64, 64, 0.8);
+          background-color: rgba(64, 64, 64, 0.2);
+
+          &:hover {
+            background-color: rgba(64, 64, 64, 0.3);
+          }
+        }
+      }
+    }
+
+    #movie {
+      border-left: 4px solid rgba(64, 64, 64, 0.8);
+      margin-bottom: 24px;
+      padding: 8px;
+      padding-right: 8px;
+      background-color: rgba(64, 64, 64, 0.1);
+
+      &:hover {
+        border-left: 4px solid white;
+        &.adult {
+          border-left-color: $color-danger;
+        }
+        &.fifteen {
+          border-left-color: $color-warning;
+        }
+        &.twelve {
+          border-left-color: $color-primary;
+        }
+        &.all {
+          border-left-color: $color-success;
+        }
+      }
+
+      #info {
+        font-size: 16px;
+
+        #watch-grade {
+          width: 30px;
+          height: 30px;
+          margin-right: 8px;
+
+          &:before {
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 100%;
+          }
+
+          &.adult:before {
+            background-color: $color-danger;
+            content: '청불';
+          }
+          &.fifteen:before {
+            background-color: $color-warning;
+            content: '15';
+          }
+          &.twelve::before{
+            background-color: $color-primary;
+            content: '12';
+          }
+          &.all::before {
+            background-color: $color-success;
+            content: '전체';
+          }
+        }
+
+        #name {
+          cursor: pointer;
+          height: 30px;
+          line-height: 30px;
+          font-size: 24px;
+          font-weight: bold;
+          margin-right: 16px;
+        }
+
+        #runtime {
+          align-self: center;
+          font-size: 18px;
+          height: 24px;
+          line-height: 24px;
+          padding-right: 8px;
+          border-right: 1px solid white;
+        }
+
+        #open {
+          align-self: center;
+          font-size: 18px;
+          height: 24px;
+          line-height: 24px;
+          padding-left: 8px;
+        }
+      }
+
+      #content {
+        padding-top: 8px;
+
+        #screen-info {
+          div {
+            padding: 4px 8px;
+            border: 1px solid rgba(64, 64, 64, 0.8);
+            background-color: rgba(64, 64, 64, 0.2);
+            font-size: 18px;
+          }
+          
+          #screen-type {
+            margin-right: 8px;
+          }
+
+          #screen-name {
+            margin-right: 8px;
+          }
+        }
+
+        #time-list {
+          margin-top: 8px;
+          margin-left: 16px;
+          font-size: 16px;
+
+          #item {
+            cursor: pointer;
+            margin-right: 4px;
+            min-width: 80px;
+            padding: 4px;
+            background-color: rgba(64, 64, 64, 0.8);
+
+            &:hover {
+              background-color: rgb(64, 64, 64);
+            }
+          }
+        }
+      }
+    }
+  }
+}

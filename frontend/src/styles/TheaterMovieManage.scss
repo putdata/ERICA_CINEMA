@@ -1,0 +1,53 @@
+@import 'Global.scss';
+
+#theater-movie-manage {
+  position: relative;
+  font-size: 20px;
+
+  select {
+    font-size: 1em;
+    margin-top: 12px;
+    width: 400px;
+  }
+
+  input {
+    margin-top: 12px;
+    font-size: 1em;
+    width: 400px;
+
+    &[type="number"] {
+      width: 100px;
+      margin-left: 12px;
+    }
+  }
+
+  #theater-list {
+    margin-top: 12px;
+    overflow: auto;
+
+    #theater {
+      min-width: max-content;
+      cursor: pointer;
+      margin-right: 12px;
+      padding: 4px 8px;
+      border: 1px solid white;
+    }
+  }
+
+  #selected-theater {
+    margin-top: 12px;
+  }
+
+  #time-list {
+    margin-top: 12px;
+  }
+
+  #start-text {
+    margin-top: 12px;
+  }
+
+  #submit {
+    cursor: pointer;
+    margin-top: 24px;
+  }
+}

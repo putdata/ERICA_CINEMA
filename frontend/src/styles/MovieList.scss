@@ -1,0 +1,191 @@
+@import 'Global.scss';
+
+#movie-list-page {
+  position: relative;
+  width: 100%;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 24px;
+
+  #header {
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    border-bottom: 4px solid rgba(64, 64, 64, 0.8);
+
+    #title {
+      flex: 1;
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+
+    #sorting {
+      align-self: flex-end;
+      font-size: 16px;
+      font-size: 0.7em;
+      height: 20px;
+      line-height: 20px;
+
+      #type {
+        cursor: pointer;
+        padding-left: 8px;
+        margin-left: 8px;
+        border-left: 2px solid rgba(64, 64, 64, 0.8);
+
+        &:first-child { border: none; }
+      }
+    }
+  }
+
+  #movies {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 24px;
+    
+
+    #movie {
+      position: relative;
+      width: 300px;
+      padding-bottom: 8px;
+      border-bottom: 4px solid rgba(64, 64, 64, 0.8);
+
+      &:hover {
+        border-bottom-width: 4px;
+        &.adult {
+          border-bottom-color: $color-danger;
+        }
+        &.fifteen {
+          border-bottom-color: $color-warning;
+        }
+        &.twelve {
+          border-bottom-color: $color-primary;
+        }
+        &.all {
+          border-bottom-color: $color-success;
+        }
+
+        & > #buttons { display: flex; }
+      }
+      #poster {
+        width: 100%;
+        height: 450px;
+        position: relative;
+
+        #watch-grade {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          width: 30px;
+          height: 30px;
+
+          &:before {
+            display: block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 100%;
+          }
+
+          &.adult:before {
+            background-color: $color-danger;
+            content: '청불';
+          }
+          &.fifteen:before {
+            background-color: $color-warning;
+            content: '15';
+          }
+          &.twelve::before{
+            background-color: $color-primary;
+            content: '12';
+          }
+          &.all::before {
+            background-color: $color-success;
+            content: '전체';
+          }
+        }
+
+        #thumbnail {
+          width: 100%;
+          height: 450px;
+        }
+      }
+
+      #name {
+        width: 100%;
+        height: 30px;
+        font-weight: 500;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 8px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 2px 0;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      #cumulative {
+        font-size: 0.8em;
+        align-items: center;
+        margin-top: 8px;
+
+        #title {
+          width: 60px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          margin-right: 8px;
+          padding: 2px 0;
+          background: rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      #statistics {
+        font-size: 0.8em;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 8px;
+
+        div {
+          align-items: center;
+
+          & > #title {
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin-right: 8px;
+            padding: 2px 0;
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+
+      #buttons {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        display: none;
+        background: rgba(0, 0, 0, 0.8);
+
+        div {
+          cursor: pointer;
+          width: 180px;
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+          color: $color-violet;
+          font-weight: 500;
+          border: 2px solid $color-violet;
+        }
+
+        #detail { margin-bottom: 8px; }
+      }
+    }
+  }
+}
